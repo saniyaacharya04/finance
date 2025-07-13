@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+{% extends "layout.html" %}
+
+{% block title %} Add Cash {% endblock %}
+
+{% block main %}
+    <h2 class="text-center">Add Cash to Your Account</h2>
+
+    <form action="/add_cash" method="post" id="addCashForm">
+        <div class="form-group">
+            <label for="amount">Amount to Add:</label>
+            <input type="number" id="amount" name="amount" class="form-control" required min="1">
+        </div>
+        <button type="submit" class="btn btn-success mt-2">Add Cash</button>
+    </form>
+
+    <script>
+        document.getElementById("addCashForm").onsubmit = function() {
+            let amount = document.getElementById("amount").value;
+            if (amount <= 0 || !Number.isInteger(parseFloat(amount))) {
+                alert("Please enter a valid positive amount.");
+                return false;
+            }
+        };
+    </script>
+{% endblock %}

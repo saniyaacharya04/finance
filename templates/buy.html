@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{% extends "layout.html" %}
+
+{% block title %} Buy Stock {% endblock %}
+
+{% block main %}
+    <h2 class="text-center">Buy Stocks</h2>
+
+    <form action="/buy" method="post" id="buyForm">
+        <div class="form-group">
+            <label for="symbol">Stock Symbol:</label>
+            <input type="text" id="symbol" name="symbol" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="shares">Number of Shares:</label>
+            <input type="number" id="shares" name="shares" class="form-control" required min="1">
+        </div>
+        <button type="submit" class="btn btn-success mt-2">Buy</button>
+    </form>
+
+    <script>
+        document.getElementById("buyForm").onsubmit = function() {
+            let shares = document.getElementById("shares").value;
+            if (shares <= 0 || !Number.isInteger(parseFloat(shares))) {
+                alert("Please enter a valid positive number of shares.");
+                return false;
+            }
+        };
+    </script>
+{% endblock %}

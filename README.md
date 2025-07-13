@@ -1,0 +1,129 @@
+<<<<<<< HEAD
+=======
+# finance
+
+>>>>>>> d7bdeb7 (Update README and add .gitignore)
+# Finance
+
+A Flask-based web application modeled after the CS50 Finance problem set. This project allows users to simulate stock trading by registering, logging in, quoting stock prices, buying and selling shares, and tracking transaction history and portfolio value.
+
+## Features
+
+- User registration, login, logout, and password change
+- Real-time stock quote lookup using CS50's Finance API
+- Buy and sell stocks with input validation and balance checking
+- View portfolio with real-time price updates
+- Track transaction history with timestamps
+- Format currency values in USD
+- Server-side session management with Flask-Session
+- Error handling and flash messaging for user feedback
+
+## Technologies Used
+
+- Flask (Python web framework)
+- Flask-Session
+- CS50 Library (for SQLite access)
+- SQLite (database)
+- Jinja2 (templating engine)
+- Requests (HTTP requests for stock API)
+- Werkzeug (password hashing)
+- HTML, CSS, and Bootstrap (frontend styling)
+
+## Project Structure
+
+```
+
+finance/
+├── templates/
+│   ├── index.html
+│   ├── login.html
+│   ├── register.html
+│   ├── quote.html
+│   ├── buy.html
+│   ├── sell.html
+│   ├── history.html
+│   └── apology.html
+├── static/
+│   └── styles.css
+├── helpers.py
+├── app.py
+├── finance.db
+├── requirements.txt
+└── README.md
+
+````
+
+## Setup & Installation
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/saniyaacharya04/finance.git
+cd finance
+````
+
+2. (Optional) Create and activate a virtual environment:
+
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
+
+3. Install dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+4. Set environment variables and run the app:
+
+```bash
+export FLASK_APP=app.py
+export FLASK_ENV=development
+flask run
+```
+
+5. Open your browser and go to:
+
+```
+http://127.0.0.1:5000
+```
+
+## Requirements
+
+Example `requirements.txt`:
+
+```
+Flask
+Flask-Session
+requests
+cs50
+pytz
+```
+
+You can generate it automatically:
+
+```bash
+pip freeze > requirements.txt
+```
+
+## Security Recommendations
+
+* Use environment variables or a `.env` file for sensitive data (e.g., API keys)
+* Add `node_modules/`, `.env`, and `*.db` to your `.gitignore` file
+* Never commit credentials or API keys to your repository
+
+## Author
+
+**Saniya Acharya**
+GitHub: [saniyaacharya04](https://github.com/saniyaacharya04)
+Email: [saniyacharya288@gmail.com](mailto:saniyacharya288@gmail.com)
+
+## License
+
+This project is licensed under the MIT License.
+
+<<<<<<< HEAD
+=======
+```
+>>>>>>> d7bdeb7 (Update README and add .gitignore)

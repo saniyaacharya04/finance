@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block title %} Sell Stock {% endblock %}
+
+{% block main %}
+    <h2 class="text-center">Sell Stocks</h2>
+
+    <form action="/sell" method="post" id="sellForm">
+        <div class="form-group">
+            <label for="symbol">Stock Symbol:</label>
+            <select id="symbol" name="symbol" class="form-control" required>
+                <option value="" disabled selected>Select a stock</option>
+                {% for stock in stocks %}
+                    <option value="{{ stock.symbol }}">{{ stock.symbol }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="shares">Number of Shares:</label>
+            <input type="number" id="shares" name="shares" class="form-control" required min="1">
+        </div>
+        <button type="submit" class="btn btn-danger mt-2">Sell</button>
+    </form>
+
+    <script>
+        document.getElementById("sellForm").onsubmit = function() {
+            let symbol = document.getElementById("symbol").value;
+            let shares = document.getElementById("shares").value;
+            if (!symbol) {
+                alert("Please select a stock to sell.");
+                return false;
+            }
+            if (shares <= 0 || !Number.isInteger(parseFloat(shares))) {
+                alert("Please enter a valid positive number of shares.");
+                return false;
+            }
+        };
+    </script>
+{% endblock %}

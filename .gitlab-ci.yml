@@ -1,0 +1,28 @@
+image: python:3.11
+
+stages:
+  - setup
+  - test
+  - deploy
+
+before_script:
+  - python -m venv venv
+  - source venv/bin/activate
+  - pip install -r requirements.txt
+
+setup:
+  stage: setup
+  script:
+    - echo "Dependencies installed"
+
+test:
+  stage: test
+  script:
+    - flask --version
+    - echo "Add tests later"
+
+deploy:
+  stage: deploy
+  script:
+    - echo "Manual deployment only"
+  when: manual

@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+
+{% block title %} Register {% endblock %}
+
+{% block main %}
+    <h2 class="text-center">Create an Account</h2>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <div class="alert alert-{{ category }} text-center">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+    <form action="/register" method="post" id="registerForm">
+        <div class="mb-3">
+            <label for="username">Username:</label>
+            <input autocomplete="off" autofocus class="form-control neon-input" id="username" name="username" placeholder="Enter username" type="text" required>
+        </div>
+        <div class="mb-3">
+            <label for="password">Password:</label>
+            <input class="form-control neon-input" id="password" name="password" placeholder="Enter password" type="password" required>
+        </div>
+        <div class="mb-3">
+            <label for="confirmation">Confirm Password:</label>
+            <input class="form-control neon-input" id="confirmation" name="confirmation" placeholder="Re-enter password" type="password" required>
+        </div>
+        <button class="btn btn-primary w-100 mt-3" type="submit">Register</button>
+    </form>
+
+    <p class="text-center mt-3">Already have an account? <a href="/login">Login here</a></p>
+
+    <script>
+        document.getElementById("registerForm").onsubmit = function() {
+            let username = document.getElementById("username").value.trim();
+            let password = document.getElementById("password").value;
+            let confirmation = document.getElementById("confirmation").value;
+
+            if (username === "" || password === "" || confirmation === "") {
+                alert("All fields are required!");
+                return false;
+            }
+
+            if (password !== confirmation) {
+                alert("Passwords do not match!");
+                return false;
+            }
+        };
+    </script>
+{% endblock %}

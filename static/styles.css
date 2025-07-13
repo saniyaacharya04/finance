@@ -1,0 +1,122 @@
+/* Dark mode with neon styling */
+body {
+    background-color: #0a0a0a;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+}
+
+nav {
+    background-color: #111;
+    border-bottom: 2px solid #0ff;
+}
+
+nav .navbar-brand {
+    font-size: xx-large;
+    font-weight: bold;
+}
+
+nav .navbar-brand .blue {
+    color: #00bfff;
+}
+
+nav .navbar-brand .red {
+    color: #ff073a;
+}
+
+nav .navbar-brand .yellow {
+    color: #f5b82e;
+}
+
+nav .navbar-brand .green {
+    color: #00ff00;
+}
+
+/* Buttons */
+button {
+    background: linear-gradient(45deg, #ff073a, #00bfff);
+    color: white;
+    border: none;
+    width: 200px;
+    padding: 10px 15px;
+    font-size: 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px #00bfff;
+}
+
+/* Input fields */
+input[type="text"],
+input[type="password"],
+input[type="number"] {
+    background-color: #222;
+    color: #0ff;
+    border: 2px solid #0ff;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+    transition: all 0.3s ease-in-out;
+}
+
+input:focus {
+    box-shadow: 0 0 10px #0ff;
+}
+
+/* Portfolio Table */
+.table-dark {
+    background-color: #111;
+    color: white;
+}
+
+.table-dark th,
+.table-dark td {
+    border-color: #0ff;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Input fields - Neon Effect */
+.neon-input {
+    background-color: #222;
+    color: #0ff;
+    border: 2px solid #0ff;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+    transition: all 0.3s ease-in-out;
+}
+
+.neon-input:focus {
+    box-shadow: 0 0 10px #0ff;
+}
+
+/* Centered form */
+form {
+    max-width: 400px;
+    margin: auto;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+}
