@@ -1,8 +1,7 @@
-<<<<<<< HEAD
+HEAD
 =======
 # finance
 
->>>>>>> d7bdeb7 (Update README and add .gitignore)
 # Finance
 
 A Flask-based web application modeled after the CS50 Finance problem set. This project allows users to simulate stock trading by registering, logging in, quoting stock prices, buying and selling shares, and tracking transaction history and portfolio value.
