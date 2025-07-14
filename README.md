@@ -122,7 +122,5 @@ Email: [saniyacharya288@gmail.com](mailto:saniyacharya288@gmail.com)
 
 This project is licensed under the MIT License.
 
-<<<<<<< HEAD
 =======
 ```
->>>>>>> d7bdeb7 (Update README and add .gitignore)
