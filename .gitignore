@@ -1,2 +1,7 @@
+__pycache__/
 .env
+*.pyc
+flask_session/
 finance.db
+.pytest_cache/
+.vscode/
