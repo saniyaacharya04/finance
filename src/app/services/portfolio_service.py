@@ -1,6 +1,11 @@
 from flask import session
+from app.domain.plan import FREE
 
 DEFAULT_CASH = 10000
+
+def get_user_plan(user_id):
+    # Placeholder: later from DB / billing
+    return FREE
 
 def get_portfolio():
     if "portfolio" not in session:
