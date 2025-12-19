@@ -3,8 +3,10 @@ from flask_session import Session
 import os
 
 from app.core.config import load_config
+from app.core.filters import usd
 from app.api.billing import bp as billing_bp
 from app.api.auth import bp as auth_bp
+from app.api.history import bp as history_bp
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
@@ -19,7 +21,12 @@ def create_app():
     load_config(app)
     Session(app)
 
+    # Register Jinja filters
+    app.jinja_env.filters["usd"] = usd
+
+    # Blueprints
     app.register_blueprint(auth_bp)
+    app.register_blueprint(history_bp)
     app.register_blueprint(billing_bp)
 
     return app
