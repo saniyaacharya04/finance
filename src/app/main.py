@@ -9,6 +9,7 @@ from app.api.billing import bp as billing_bp
 from app.api.auth import bp as auth_bp
 from app.api.history import bp as history_bp
 from app.api.quotes import bp as quotes_bp
+from app.api.trading import bp as trading_bp
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
@@ -29,6 +30,7 @@ def create_app():
     app.register_blueprint(auth_bp)
     app.register_blueprint(history_bp)
     app.register_blueprint(quotes_bp)
+    app.register_blueprint(trading_bp)
     app.register_blueprint(billing_bp)
 
     return app
