@@ -4,6 +4,7 @@ import os
 
 from app.core.config import load_config
 from app.core.filters import usd
+from app.core.errors import forbidden
 from app.api.billing import bp as billing_bp
 from app.api.auth import bp as auth_bp
 from app.api.history import bp as history_bp
@@ -23,6 +24,7 @@ def create_app():
     Session(app)
 
     app.jinja_env.filters["usd"] = usd
+    app.register_error_handler(403, forbidden)
 
     app.register_blueprint(auth_bp)
     app.register_blueprint(history_bp)
